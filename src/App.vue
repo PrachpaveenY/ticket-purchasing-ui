@@ -1,30 +1,81 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="">
+      <TheHeader :title="title"/>
+      <div class="container">
+       <page-card>
+         <page-button @click="switchTab('TicketPurchasingFull')" :mode="setLoginActiveTab">Ticket Purchasing Full</page-button>
+         <page-button @click="switchTab('TicketListDelivery')" :mode="setRegisterActiveTab">TicketList Delivery</page-button>
+         <page-button @click="switchTab('Payment')" :mode="setRegisterActiveTab">Payment</page-button>
+         <page-button @click="switchTab('SummaryTotal')" :mode="setRegisterActiveTab">Summary Total</page-button>
+       </page-card>
+       <keep-alive>
+          <component :is="selectedTab"></component>
+       </keep-alive>
+      </div>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  
+  
 </template>
 
+<script>
+import TheHeader from './components/layouts/TheHeader.vue';
+import TicketPurchasingFull from './components/Auth/TicketPurchasingFull.vue';
+import TicketListDelivery from './components/Auth/TicketList-Delivery.vue';
+import Payment from './components/Auth/Payment.vue';
+import SummaryTotal from './components/Auth/SummaryTotal.vue';
+
+export default {
+  name : 'App',
+  components:{
+      TheHeader,
+      TicketPurchasingFull,
+      TicketListDelivery,
+      Payment,
+      SummaryTotal,
+  },
+  data() {
+      return {
+          title: 'Ticket Purchasing UI',
+          selectedTab : TicketPurchasingFull,
+      }
+  },
+  methods:{
+      switchTab(tab){
+          this.selectedTab = tab;
+      }
+  },
+  computed:{
+      // เซ็ตเป็นค่าว่างเมื่อคลิก
+      setLoginActiveTab(){
+          return this.selectedTab !== 'TicketPurchasingFull' ? '' : 'default';
+      },
+      setRegisterActiveTab(){
+          return this.selectedTab !== 'TicketListDelivery' ? '' : 'default';
+      },
+      setRegisterActiveTab(){
+          return this.selectedTab !== 'Payment' ? '' : 'default';
+      },
+      setRegisterActiveTab(){
+          return this.selectedTab !== 'SummaryTotal' ? '' : 'default';
+      },
+  }
+}
+
+</script>
+
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito Sans', sans-serif;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+.container {
+  width: 90%;
+  margin: 0 auto;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+
+/* body, html {} */
 </style>
