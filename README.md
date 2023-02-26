@@ -5,15 +5,15 @@
 </br>
 
 #### Details
-- TicketList (Incomplete)
-- Payment (Incomplete)
-- SummaryAll (Incomplete)
+- TicketPurchasingFull (complete)
+- TicketList (complete)
+- Payment (complete)
+- SummaryAll (complete)
 </br>
 
 - Workflow
     ```
-     1. ให้ผู้ใช้เลือกรายการที่ต้องการซื้อ เมื่อเลือกรายการและกด submit
-     2.
+     1. 
     ```
 </br>
 
@@ -25,6 +25,7 @@
     ```
     $ npm run dev
     ```
+- View my project website = 
 </br></br></br></br>
 
 ## Test

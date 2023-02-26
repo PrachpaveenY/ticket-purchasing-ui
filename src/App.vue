@@ -3,10 +3,10 @@
       <TheHeader :title="title"/>
       <div class="container">
        <page-card>
-         <page-button @click="switchTab('TicketPurchasingFull')" :mode="setLoginActiveTab">Ticket Purchasing Full</page-button>
-         <page-button @click="switchTab('TicketListDelivery')" :mode="setRegisterActiveTab">TicketList Delivery</page-button>
-         <page-button @click="switchTab('Payment')" :mode="setRegisterActiveTab">Payment</page-button>
-         <page-button @click="switchTab('SummaryTotal')" :mode="setRegisterActiveTab">Summary Total</page-button>
+         <page-button @click="switchTab('TicketPurchasingFull')" :mode="setTicketPurchasingFullActiveTab">Ticket Purchasing Full</page-button>
+         <page-button @click="switchTab('TicketListDelivery')" :mode="setTicketListDeliveryActiveTab">TicketList Delivery</page-button>
+         <page-button @click="switchTab('Payment')" :mode="setPaymentActiveTab">Payment</page-button>
+         <page-button @click="switchTab('SummaryTotal')" :mode="setSummaryTotalActiveTab">Summary Total</page-button>
        </page-card>
        <keep-alive>
           <component :is="selectedTab"></component>
@@ -46,16 +46,16 @@ export default {
   },
   computed:{
       // เซ็ตเป็นค่าว่างเมื่อคลิก
-      setLoginActiveTab(){
+      setTicketPurchasingFullActiveTab(){
           return this.selectedTab !== 'TicketPurchasingFull' ? '' : 'default';
       },
-      setRegisterActiveTab(){
+      setTicketListDeliveryActiveTab(){
           return this.selectedTab !== 'TicketListDelivery' ? '' : 'default';
       },
-      setRegisterActiveTab(){
+      setPaymentActiveTab(){
           return this.selectedTab !== 'Payment' ? '' : 'default';
       },
-      setRegisterActiveTab(){
+      setSummaryTotalActiveTab(){
           return this.selectedTab !== 'SummaryTotal' ? '' : 'default';
       },
   }
