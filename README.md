@@ -1,5 +1,5 @@
 # Ticket Purchasing UI
-- View my project website = null
+- View my project website = https://prachpaveeny.github.io/ticket-purchasing-ui/
 - Project : Ticket Purchasing UI
 - Tools = Vue.js
 </br>
