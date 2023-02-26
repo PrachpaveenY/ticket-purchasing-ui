@@ -36,13 +36,13 @@
 │
 └── 📁backend
 │
-└── 📁dist			        	    = deploy Vue.js
+└── 📁dist			        	  = deploy Vue.js
 │
 └── 📁node_modules
 │
 └── 📁public
 │
-└── 📁src				             = main Vue.js file (์Complete)
+└── 📁src				          = main Vue.js file (์Complete)
 │   └── 📁assets
 │   └── 📁components
 │   │   │
